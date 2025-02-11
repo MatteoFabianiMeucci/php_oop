@@ -1,4 +1,5 @@
 <?php
+    header("Content-Type: application/json");
     include("./Alunno.php");
     $a1 = new Alunno();
     $a1->setNome("Matteo");
@@ -16,8 +17,5 @@
     $a3->setEta(18);
 
     $classe = array ("a1" => $a1, "a2" => $a2, "a3" => $a3);
-
-    foreach ($classe as $alunno => $datiAlunno) {
-        echo "<p>" . $datiAlunno->stampa() . "</p>";
-    }
+    echo json_encode($classe);
 ?>
